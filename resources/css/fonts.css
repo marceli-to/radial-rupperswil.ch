@@ -1,0 +1,24 @@
+/* Custom Fonts */
+@font-face {
+  font-family: 'Uni-Neue-Regular';
+  src: url('../fonts/UniNeueRegular.woff2') format('woff2'), url('../fonts/UniNeueRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uni-Neue-Bold';
+  src: url('../fonts/UniNeueBold.woff2') format('woff2'), url('../fonts/UniNeueBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uni-Neue-Book';
+  src: url('../fonts/UniNeueBook.woff2') format('woff2'), url('../fonts/UniNeueBook.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

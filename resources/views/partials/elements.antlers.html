@@ -1,0 +1,23 @@
+{{ if type == 'gallery' }}
+  <div class="sm:grid sm:grid-cols-12 sm:gap-15 lg:gap-20">
+    {{ images }}
+      <div class="mb-15 sm:mb-0 sm:col-span-4">
+        <a data-fancybox href="{{ glide:image preset='xl' }}">
+          <figure>
+            <picture>
+              <source srcset="{{ glide:image preset='gallery-webp' }}" type="image/webp">
+              <img 
+                src="{{ glide:image preset='gallery' }}" 
+                alt="{{ image:alt }}" 
+                title="{{ image:alt }}" 
+                height="{{ image:height }}" 
+                width="{{ image:width }}"
+                class="block {{ class ?? '' }}"
+                loading="lazy">
+            </picture>
+          </figure>
+        </a>
+      </div>
+    {{ /images}}
+  </div>
+{{ /if }}

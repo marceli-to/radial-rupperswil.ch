@@ -1,0 +1,8 @@
+<a 
+  href="javascript:;" 
+  x-on:click="menu = ! menu" 
+  title="{{ "Menü anzeigen" | trans }}"
+  :class="{ 'is-active': menu === true }"
+  class="group flex justify-center w-24 {{ is_homepage ? 'text-noctar' : 'text-white' }} md:hidden {{ class }}">
+  {{ partial:icons/burger class="w-full h-auto" }}
+</a>

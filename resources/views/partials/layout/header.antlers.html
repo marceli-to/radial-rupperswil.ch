@@ -1,0 +1,40 @@
+{{ if is_homepage }}
+  <header class="relative">
+
+    <div class="absolute left-0 top-0 w-full">
+      {{ partial:layout/inner class="flex items-center md:items-end justify-between pt-10 md:pt-20 xl:pt-30" }}
+
+        {{ partial:icons/brand-dark class="w-100 md:w-140 xl:w-180 h-auto" }}
+
+        {{ partial:menu/buttons/show }}
+        {{ partial:menu/wrapper }}
+
+        {{ partial:menu/items class="hidden md:block" }}
+
+      {{ /partial:layout/inner }}
+    </div>
+
+    {{ partial:components/media/visual 
+      image="radial-rupperswil-visual-header"
+      class="aspect-[16/10] md:aspect-[16/9] xl:aspect-[16/8] object-cover" 
+      alt="Radial Rupperswil" }}
+
+  </header>
+{{ else }}
+  <header class="bg-noctar">
+    {{ partial:layout/inner class="flex items-center md:items-end justify-between py-10 md:py-20 xl:py-30" }}
+
+      <a 
+        href="/"
+        aria-label="Startseite Radial Rupperswil">
+        {{ partial:icons/brand-light class="w-100 md:w-140 xl:w-180 h-auto" }}
+      </a>
+
+      {{ partial:menu/buttons/show }}
+      {{ partial:menu/wrapper }}
+
+      {{ partial:menu/items class="hidden md:block" }}
+
+    {{ /partial:layout/inner }}
+  </header>
+{{ /if }}

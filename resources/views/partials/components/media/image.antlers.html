@@ -1,0 +1,13 @@
+<figure class="{{ wrapperClass }}">
+  <picture>
+    <source media="(min-width: 768px)" srcset="/assets/{{ image }}-md.jpg">
+    <source srcset="/assets/{{ image }}-sm.jpg">
+    <img 
+      src="/assets/{{ image }}-sm.jpg" 
+      alt="{{ alt }}" 
+      title="{{ alt }}" 
+      height="1600" 
+      width="900"
+      class="w-full h-auto block {{ class }}">
+  </picture>
+</figure>

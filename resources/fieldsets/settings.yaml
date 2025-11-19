@@ -1,0 +1,19 @@
+title: Settings
+fields:
+  -
+    handle: show_maps
+    field:
+      type: toggle
+      display: 'Show maps'
+  -
+    handle: template
+    field:
+      type: template
+      display: Template
+      folder: templates
+  -
+    handle: layout
+    field:
+      type: template
+      display: Layout
+      folder: templates

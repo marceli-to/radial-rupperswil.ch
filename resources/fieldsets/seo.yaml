@@ -1,0 +1,81 @@
+title: SEO
+fields:
+  -
+    handle: meta_title
+    field:
+      type: text
+      display: 'Meta Title'
+      instructions: 'SEO title for search engines. Recommended: 50-60 characters. If empty, page title will be used.'
+      localizable: true
+      instructions_position: below
+      character_limit: 60
+  -
+    handle: meta_description
+    field:
+      type: textarea
+      display: 'Meta Description'
+      instructions: 'SEO description for search engines. Recommended: 150-160 characters.'
+      localizable: true
+      instructions_position: below
+      character_limit: 160
+  -
+    handle: open_graph_title
+    field:
+      type: text
+      display: 'Open Graph Title'
+      instructions: 'Open Graph title for social media. If empty, meta title or page title will be used.'
+      localizable: true
+      instructions_position: below
+  -
+    handle: open_graph_description
+    field:
+      type: textarea
+      display: 'Open Graph Description'
+      instructions: 'Open Graph description for social media. If empty, meta description will be used.'
+      localizable: true
+      instructions_position: below
+  -
+    handle: open_graph_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Open Graph Image'
+      instructions: 'Open Graph image for social media sharing. Recommended: 1200x630px.'
+      localizable: true
+      instructions_position: below
+  -
+    handle: open_graph_type
+    field:
+      type: select
+      display: 'Open Graph Type'
+      instructions: 'Defines how this page appears when shared on social media. "Website" for general pages, "Article" for blog posts/news (shows publish date and author), "Product" for items with pricing. This helps social platforms display your content with appropriate formatting and information.'
+      localizable: false
+      instructions_position: below
+      default: website
+      options:
+        website: Website
+        article: Article
+        product: Product
+  -
+    handle: canonical_url
+    field:
+      type: text
+      display: 'Canonical URL'
+      instructions: 'The preferred URL for this content. Use this when the same content is accessible via multiple URLs to tell search engines which version to index. Prevents duplicate content penalties and consolidates ranking signals. Leave empty to use the default page URL.'
+      localizable: false
+      instructions_position: below
+  -
+    handle: robots
+    field:
+      type: select
+      display: 'Robots Meta Tag'
+      instructions: 'Controls search engine crawler behavior. "Index" allows the page in search results, "No Index" hides it. "Follow" lets crawlers follow links on this page, "No Follow" prevents it. Use "No Index" for private pages, duplicates, or low-value content you don''t want in search results. Default "Index, Follow" is best for most pages.'
+      localizable: false
+      instructions_position: below
+      default: index_follow
+      options:
+        index_follow: 'Index, Follow (Default)'
+        noindex_follow: 'No Index, Follow'
+        index_nofollow: 'Index, No Follow'
+        noindex_nofollow: 'No Index, No Follow'

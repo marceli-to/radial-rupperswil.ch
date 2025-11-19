@@ -1,0 +1,20 @@
+<li>
+  <a 
+    href="{{ url }}" 
+    class="
+      block
+      w-full
+      font-uni-neue-bold
+      lowercase
+      text-lg
+      xl:text-xl
+      leading-none
+      text-right 
+      {{ is_homepage ? 'text-white md:text-noctar' : 'text-noctar md:text-mistel md:hover:text-white' }} 
+      {{ is_current || is_parent ? 'md:text-white' : '' }}
+      transition-color"
+    target="{{ is_external ? '_blank' : '_self' }}"
+    title="{{ title }}">
+    {{ title }}
+  </a>
+</li>

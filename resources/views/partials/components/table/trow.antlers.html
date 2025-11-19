@@ -1,0 +1,12 @@
+<tr 
+  {{ if filterable }}
+    data-object
+    data-object-number="{{ number }}"
+    data-object-building="{{ street }}"
+    data-object-state="{{ state }}"
+    data-object-floor="{{ floor }}"
+    data-object-rooms="{{ rooms }}"
+  {{ /if }}
+  class="border-b border-b-black bg-transparent hover:bg-sage hover:bg-opacity-20 transition-all duration-150">
+  {{ slot }}
+</tr>
