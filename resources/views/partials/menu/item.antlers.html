@@ -10,9 +10,9 @@
       xl:text-xl
       leading-none
       text-right 
-      {{ is_homepage ? 'text-white md:text-noctar' : 'text-noctar md:text-mistel md:hover:text-white' }} 
+      {{ is_homepage ? 'text-white hover:text-lunair md:text-noctar md:hover:text-white' : 'text-noctar md:text-mistel md:hover:text-white' }} 
       {{ is_current || is_parent ? 'md:text-white' : '' }}
-      transition-color"
+      transition-colors"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}

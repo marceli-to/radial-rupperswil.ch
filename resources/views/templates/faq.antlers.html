@@ -1,4 +1,79 @@
-{{ partial:layout/section }}
+    {{ partial:components/media/visual
+      wrapperClass="rellax"
+      data="data-rellax-speed='-5'"
+      image="radial-rupperswil-visual-faq"
+      class="aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/5] object-cover"
+      alt="Radial Rupperswil" }}
+
+{{ partial:layout/section class="bg-noctar pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
+
   {{ partial:layout/inner }}
+
+    <div class="max-w-3xl">
+
+      {{ partial:components/headings/h1 title="FAQ" class="text-white" }}
+
+      {{ partial:components/headings/h2 title="Lorem ipsum dolor" class="text-white uppercase" }}
+
+      <p class="text-white mt-10 md:mt-20 lg:mt-30">
+        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione consequuntur, omnis similique alias dicta delectus error adipisci qui, sed illo, aperiam assumenda voluptatum voluptatem molestiae accusantium eligendi? Maxime, error aliquid.</strong>
+      </p>
+
+      <p class="text-white">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime sapiente delectus placeat voluptas, ab voluptatem unde officiis eveniet dicta alias. Saepe neque minima odit temporibus fuga ea id exercitationem earum! Lorem ipsum dolor sit amet.
+      </p>
+
+
+    </div>
+
+    <div class="mt-30 lg:mt-50 text-white max-w-3xl">
+      {{ partial:components/accordion/wrapper }}
+
+        {{ partial:components/accordion/item id="tierhaltung" }}
+          {{ partial:components/accordion/button title="Tierhaltung" }}
+          {{ partial:components/accordion/content }}
+            <p>Kleine Haustiere wie Katzen oder kleine Hunde sind nach Absprache mit der Verwaltung erlaubt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+        {{ partial:components/accordion/item id="nebenkosten" }}
+          {{ partial:components/accordion/button title="Nebenkosten" }}
+          {{ partial:components/accordion/content }}
+            <p>Die Nebenkosten beinhalten Heizung, Warmwasser, Allgemeinstrom, Hauswartung und Gartenpflege. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+        {{ partial:components/accordion/item id="schwellenloser-zugang" }}
+          {{ partial:components/accordion/button title="Schwellenloser Zugang" }}
+          {{ partial:components/accordion/content }}
+            <p>Alle Wohnungen sind schwellenlos zugänglich. Der Personenaufzug ist rollstuhlgängig und ermöglicht barrierefreien Zugang zu allen Stockwerken.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+        {{ partial:components/accordion/item id="kaution" }}
+          {{ partial:components/accordion/button title="Kaution" }}
+          {{ partial:components/accordion/content }}
+            <p>Die Kaution beträgt drei Monatsmieten und wird auf einem Sperrkonto hinterlegt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+        {{ partial:components/accordion/item id="raumhoehe" }}
+          {{ partial:components/accordion/button title="Raumhöhe" }}
+          {{ partial:components/accordion/content }}
+            <p>Die Raumhöhe beträgt 2.50 Meter in allen Wohnräumen.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+        {{ partial:components/accordion/item id="parkplaetze" }}
+          {{ partial:components/accordion/button title="Parkplätze" }}
+          {{ partial:components/accordion/content }}
+            <p>Es stehen 23 Autoeinstellplätze in der Tiefgarage zur Verfügung, davon mehrere mit E-Ladestation. Zusätzlich gibt es drei Besucherparkplätze im Aussenbereich. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          {{ /partial:components/accordion/content }}
+        {{ /partial:components/accordion/item }}
+
+      {{ /partial:components/accordion/wrapper }}
+    </div>
+
   {{ /partial:layout/inner }}
+
 {{ /partial:layout/section }}

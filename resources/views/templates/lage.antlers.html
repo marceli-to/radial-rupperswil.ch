@@ -1,20 +1,45 @@
-{{ partial:layout/section }}
+    {{ partial:components/media/visual
+      wrapperClass="rellax"
+      data="data-rellax-speed='-5'"
+      image="radial-rupperswil-visual-lage"
+      class="aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/5] object-cover"
+      alt="Radial Rupperswil" }}
+
+{{ partial:layout/section class="bg-noctar pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
 
   {{ partial:layout/inner }}
 
-    {{ partial:components/headings/h1 title="Lage" }}
+    <div class="max-w-3xl">
 
-    {{ partial:layout/grid }}
+      {{ partial:components/headings/h1 title="Lage" class="text-white" }}
 
-      {{ partial:layout/span }}
+      {{ partial:components/headings/h2 title="Wohnen zwischen Natur, Zentrum und idealer Infrastruktur" class="text-white uppercase" }}
 
-        <p>Das Wettsteinquartier bietet nebst der hohen Wohnqualität eine Vielzahl von Einkaufsmöglichkeiten, gastronomischen Angeboten, Sporteinrichtungen und Schulen in unmittelbarer Nähe, was Ihnen zusätzlichen Komfort und kurze Wege für alle Bedürfnisse bietet.</p>
-        <p>Die Überbauung befindet sich zentral gelegen, unmittelbar am Basler Rheinufer. Ein Spaziergang entlang des Rheinufers oder ein gemütliches Picknick am Wasser sind nur einige der vielen Möglichkeiten, die hier geboten werden. Die unmittelbare Nähe zur Natur macht diesen Ort zu einem idealen Rückzugsort, um dem stressigen Alltag zu entfliehen und sich zu entspannen.</p>
-        <p>Der öffentliche Verkehr ist nur einen Katzensprung von der Haustür entfernt und bringt Sie in wenigen Minuten zu beliebten Hotspots in Basel. Die Innenstadt von Basel ist ebenfalls bequem in wenigen Fahrminuten erreichbar. Durch die unmittelbare Nähe zur Autobahn ist die Lage des Standorts auch für Automobilisten äusserst attraktiv. Die schnelle und bequeme Anbindung an das Autobahnnetz ermöglicht eine zeitsparende Anreise und eine reibungslose Anbindung an die umliegenden Städte und Regionen.</p>
+      <p class="text-white mt-10 md:mt-20 lg:mt-30">
+        <strong>Rupperswil liegt im Bezirk Lenzburg im Kanton Aargau und ist dank der Nähe zur Autobahn A1 sowie zur Bahnlinie Zürich–Bern verkehrstechnisch hervorragend erschlossen. Aarau und Lenzburg sind nur wenige Minuten entfernt, Zürich, Basel und Bern erreichen Sie unter einer Stunde. Die zentrale Lage macht den Ort besonders attraktiv für Pendler und Berufstätige.</strong>
+      </p>
 
-      {{ /partial:layout/span }}
+      <p class="text-mistel">
+        Der Neubau «radial» befindet sich am Alter Schulweg 31, einem gewachsenen und ruhigen Wohnquartier mit kurzen Wegen zu allen wichtigen Einrichtungen. Schule, Bahnhof, Einkaufsmöglichkeiten, Gastronomie, Apotheken und medizinische Grundversorgung liegen in Gehdistanz. Ein Alltag ohne Auto ist problemlos möglich.
+      </p>
 
-    {{ /partial:layout/grid }}
+      <p class="text-mistel">
+        Rupperswil bietet zugleich eine hohe Lebensqualität: Die Auenlandschaft der Aare und angrenzende Wälder wie der Suret- und Länzertwald laden zu Spaziergängen, Sport und Erholung im Grünen ein. Spiel- und Sportplätze sowie weitere Freiräume schaffen ein naturnahes Umfeld direkt vor der Haustür.
+      </p>
+
+      <p class="text-mistel">
+        Für ältere Menschen oder Angehörige bietet das nahegelegene Pflegeheim Länzerthus eine wichtige Infrastruktur und stärkt die Versorgungssicherheit im Quartier.
+      </p>
+
+      <p class="text-mistel">
+        Der Ort zählt rund 6’300 Einwohnende und wächst kontinuierlich. Die ausgewogene Bevölkerungsstruktur sowie die hohe Nachfrage nach modernen Wohnungen unterstreichen die Attraktivität des Standorts für Paare, Einzelpersonen, Senior:innen sowie Berufspendler:innen.
+      </p>
+
+      <p class="text-mistel">
+        Perfekt angebunden, alltagsnah versorgt und umgeben von Natur – Rupperswil verbindet zentrale Lage mit hoher Wohnqualität.
+      </p>
+
+    </div>
 
   {{ /partial:layout/inner }}
 

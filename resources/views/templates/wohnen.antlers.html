@@ -1,4 +1,169 @@
-{{ partial:layout/section }}
+    {{ partial:components/media/visual
+      wrapperClass="rellax"
+      data="data-rellax-speed='-5'"
+      image="radial-rupperswil-visual-wohnen"
+      class="aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/5] object-cover"
+      alt="Radial Rupperswil" }}
+
+{{ partial:layout/section class="bg-white pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
+
   {{ partial:layout/inner }}
+
+    <div class="max-w-3xl">
+
+      {{ partial:components/headings/h1 title="Wohnen" class="text-mistel" }}
+
+      {{ partial:components/headings/h2 title="Durchdacht, modern und komfortabel" class=" uppercase" }}
+
+      <p class="mt-10 md:mt-20 lg:mt-30">
+        <strong>Die Wohnungen im «radial» überzeugen durch klare Architektur, hellen Wohnraum und funktionale Grundrisse, die den Alltag spürbar erleichtern. Jede Einheit wurde sorgfältig geplant, um ein angenehmes Wohngefühl und hohe Lebensqualität zu bieten.</strong>
+      </p>
+
+      <p>
+        Ein besonderes Plus ist das separate Reduit mit eigenem Waschturm, wodurch das Waschen direkt in der Wohnung möglich ist. Dies schafft Komfort, Unabhängigkeit und kurze Wege im Alltag. Zusätzlichen Stauraum bietet ein privates Kellerabteil zu jeder Wohnung.
+      </p>
+
+      <p>
+        Die moderne Komfortlüftung mit kontrollierter Wohnraumbelüftung sorgt in allen Räumen für ein ausgewogenes Raumklima und konstant gute Luftqualität. Grosse Fensterfronten bringen viel Tageslicht ins Innere und unterstreichen die offene Gestaltung der Wohnbereiche.
+      </p>
+
+      <p>
+        Das Wohnkonzept verbindet zeitgemässes Design, hochwertige Materialien und funktionale Details zu einem stimmigen Ganzen – ideal für Menschen, die Wert auf Komfort, Qualität und eine moderne Wohnumgebung legen.
+      </p>
+
+      <div class="mt-10 lg:mt-20">
+        <a 
+          href="/assets/downloads/radial-rupperswil-kurzbaubeschrieb.pdf"
+          target="_blank"
+          arial-label="Kurzbaubeschrieb herunterladen"
+          class="btn-pill">
+          Kurzbaubeschrieb
+        </a>
+      </div>
+
+    </div>
+
   {{ /partial:layout/inner }}
+
+{{ /partial:layout/section }}
+
+{{ partial:layout/section class="bg-noctar pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
+
+  {{ partial:layout/inner }}
+
+    {{ partial:components/headings/h1 title="kurzbaubeschrieb" class="text-white mb-15 lg:mb-30" }}
+
+    {{ partial:layout/grid }}
+
+      {{ partial:layout/span class="text-white flex flex-col gap-y-20 lg:gap-y-30" }}
+
+        <div>
+          {{ partial:components/headings/h2 title="Eingangsbereich / Korridor / Wohnen / Essen / Zimmer" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Bodenbeläge:</strong> Feinsteinzeugplatten in Parkettoptik, mit Holzsockel</li>
+            <li><strong>Wände:</strong> Wände mit Abrieb , weiss gestrichen. Pro Wohnung vom Erd- bis einschliesslich 2. Obergeschoss eine Wand in Sichtbeton im Wohn-Essbereich</li>
+            <li><strong>Decke:</strong> Decke mit Weissputz und aufgesetzter Vorhangschiene, gestrichen</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Küche" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Bodenbeläge:</strong> Feinsteinzeugplatten in Parkettoptik mit Holzsockel</li>
+            <li><strong>Wände:</strong> Wände mit Abrieb, weiss gestrichen</li>
+            <li><strong>Decke:</strong> Decke mit Weissputz</li>
+            <li><strong>Rückwand:</strong> Glasrückwand weiss zwischen Ober- und Unterbau</li>
+            <li><strong>Einbauten:</strong> Küchenmöbel kunstharzbeschichtet, weiss</li>
+            <li><strong>Abdeckung:</strong> Naturstein Granit, poliert, schwarz</li>
+            <li><strong>Geräte:</strong> Backofen, Glaskeramikkochfeld, Dampfabzug (Umluft), Kühlschrank, Geschirrspüler</li>
+            <li><strong>Unterbauleuchten unter Hängeschränken</strong></li>
+            <li><strong>Kehrrichtsystem:</strong> integriert in Küchenmöbel</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Badezimmer / Nasszellen" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Bodenbeläge:</strong> Feinsteinzeugplatten in Parkettoptik</li>
+            <li><strong>Wände:</strong> Steingutplatten, weiss</li>
+            <li><strong>Decke:</strong> Weissputz, gestrichen</li>
+            <li><strong>Sanitärapparate:</strong> Badewanne, bodenebene Duschwand, Wand-WC, Waschtisch mit Spiegelschrank</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Reduit" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Bodenbeläge:</strong> Feinsteinzeugplatten in Parkettoptik</li>
+            <li><strong>Wände:</strong> Abrieb, gestrichen weiss</li>
+            <li><strong>Decke:</strong> Weissputz, gestrichen weiss</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Fenster / Verdunkelung / Sonnenstoren" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Fenster:</strong> Holz-Metall-Fenster, innen weiss, aussen schwarzblau pulverbeschichtet</li>
+            <li><strong>Verdunkelung:</strong> Metall-Lamellenraffstoren, elektrisch betrieben</li>
+            <li><strong>Balkone:</strong> Ausstellmarkisen in Stoff mit Kurbel</li>
+            <li><strong>Terrassen:</strong> Ausstellmarkisen in Stoff elektrisch</li>
+          </ul>
+        </div>
+
+      {{ /partial:layout/span }}
+
+      {{ partial:layout/span class="text-white flex flex-col gap-y-20 lg:gap-y-30" }}
+
+        <div>
+          {{ partial:components/headings/h2 title="Anlagen" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li>Gegensprechanlage und elektrische Türöffnung</li>
+            <li>Steckdosen in genügender Anzahl, Multimediaanschluss im Wohnzimmer</li>
+            <li><strong>Beleuchtung:</strong> Einbauleuchten in Küche, Bad und Entrée; Aufbauleuchten auf Balkon bzw. Terrasse; Wohnen, Zimmer, Reduit mit Anschlüssen für Deckenlampen</li>
+            <li>Mieterkeller mit 3-fach-Steckdose und Beleuchtungsinstallation</li>
+            <li>Vorbereitete Lade-Grundinfrastruktur (Flachbandkabel) für E-Mobilität auf Nordseite der Einstellhalle inkl. Lastmanagement</li>
+            <li><strong>Wärmeerzeugung:</strong> Grundwasser-Wärmepumpe</li>
+            <li><strong>Wärmeverteilung:</strong> Bodenheizung, individuell regulierbar</li>
+            <li>Komfortable Fussbodenheizung mit Freecooling in allen Räumen in der Wohnung</li>
+            <li>Komfortlüftung in allen Wohnungen</li>
+            <li>Kellerabteile mechanisch belüftet</li>
+            <li>Mechanische Abluftanlage in Einstellhalle</li>
+            <li>Ein Personenaufzug für max. 8 Personen / 630 kg, rollstuhlgängig</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Keller / Tiefgarage" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li>Pro Wohnung ein Kellerabteil</li>
+            <li>23 Autoeinstellplätze, davon mehrere mit E-Ladestation</li>
+            <li>Veloabstellplätze in Tiefgarage vorhanden</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Aussenabstellplätze" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li>Drei Besucherautoabstellplätze</li>
+            <li>Fahrradabstellplätze im Aussenbereich</li>
+          </ul>
+        </div>
+
+        <div>
+          {{ partial:components/headings/h2 title="Aussenflächen / Umgebung" class="text-mistel uppercase mb-10 lg:mb-15" }}
+          <ul>
+            <li><strong>Sitzplätze EG:</strong> Zementplatten, sandgestrahlt</li>
+            <li><strong>Balkone:</strong> Hartbeton, roh</li>
+            <li><strong>Terrassen:</strong> Zementplatten, sandgestrahlt</li>
+            <li>Steckdose und Deckenleuchte vorhanden</li>
+            <li>Begrünte Aussenanlagen mit Aufenthalts- und Spielplätzen</li>
+          </ul>
+        </div>
+
+      {{ /partial:layout/span }}
+
+    {{ /partial:layout/grid }}
+
+  {{ /partial:layout/inner }}
+
 {{ /partial:layout/section }}

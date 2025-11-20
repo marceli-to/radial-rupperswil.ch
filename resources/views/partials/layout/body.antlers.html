@@ -1,6 +1,6 @@
 <body 
   x-data="{ menu: false }" 
-  class="antialiased font-uni-neue text-black text-sm md:text-md lg:text-lg leading-[1.4] flex flex-col min-h-screen">
+  class="{{ is_homepage ? 'bg-noctar' : '' }} antialiased font-uni-neue text-noctar text-sm md:text-md lg:text-lg leading-[1.35] flex flex-col min-h-screen">
   {{ slot:header }}
   {{ slot }}
   {{ slot:footer }}

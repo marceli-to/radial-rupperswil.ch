@@ -1,7 +1,7 @@
 {{ if is_homepage }}
   <header class="relative">
 
-    <div class="absolute left-0 top-0 w-full">
+    <div class="absolute left-0 top-0 w-full z-10">
       {{ partial:layout/inner class="flex items-center md:items-end justify-between pt-10 md:pt-20 xl:pt-30" }}
 
         {{ partial:icons/brand-dark class="w-100 md:w-140 xl:w-180 h-auto" }}
@@ -14,14 +14,16 @@
       {{ /partial:layout/inner }}
     </div>
 
-    {{ partial:components/media/visual 
+    {{ partial:components/media/visual
+      wrapperClass="rellax"
+      data="data-rellax-speed='-5'"
       image="radial-rupperswil-visual-header"
       class="aspect-[16/10] md:aspect-[16/9] xl:aspect-[16/8] object-cover" 
       alt="Radial Rupperswil" }}
 
   </header>
 {{ else }}
-  <header class="bg-noctar">
+  <header class="bg-noctar sticky top-0 z-50">
     {{ partial:layout/inner class="flex items-center md:items-end justify-between py-10 md:py-20 xl:py-30" }}
 
       <a 
@@ -31,6 +33,7 @@
       </a>
 
       {{ partial:menu/buttons/show }}
+
       {{ partial:menu/wrapper }}
 
       {{ partial:menu/items class="hidden md:block" }}

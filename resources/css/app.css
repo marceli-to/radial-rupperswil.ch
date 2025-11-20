@@ -294,6 +294,14 @@ p:not(:last-of-type) {
   @apply mb-15 lg:mb-20
 }
 
+section ul {
+  @apply ml-10 list-['•']
+}
+
+section li {
+  @apply mb-5 lg:mb-10 pl-15;
+}
+
 .btn-pill {
   @apply bg-mistel hover:bg-mistel/60 transition-colors rounded-full leading-none font-uni-neue-bold px-20 lg:px-35 py-6 lg:py-10 inline-block w-auto text-white text-xs lg:text-sm tracking-widest uppercase 
 }
