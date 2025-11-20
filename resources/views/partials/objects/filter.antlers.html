@@ -1,13 +1,36 @@
-{{ partial:layout/grid class="sm:!gap-16 lg:!gap-20 mb-40 md:mb-60 lg:mb-80" }}
+{{ partial:layout/grid class="sm:!gap-x-40 sm:!gap-y-20 lg:!gap-y-40 mb-40 md:mb-60 lg:mb-80 mt-10 md:mt-20 xl:mt-30" }}
 
   {{ partial:layout/span class="lg:!col-span-3" }}
-    <div class="uppercase font-uni-neue-bold font-black text-sage text-md tracking-wider">Verfügbarkeit</div>
+    <div class="font-uni-neue-bold font-black tracking-wider lowercase">
+      Verfügbarkeit
+    </div>
     <div>
       <select 
-        class="js-filter-attribute appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_1rem_center] bg-no-repeat !outline-none bg-sage font-lato-regular rounded-sm text-white text-base 2xl:text-md py-10 px-16 mt-10 w-full h-45" 
+        class="
+          js-filter-attribute 
+          appearance-none 
+          text-xs 
+          lg:text-sm 
+          tracking-widest 
+          leading-none
+          uppercase 
+          bg-[url(../icons/chevron-down.svg)] 
+          bg-[length:15px_auto] 
+          bg-[right_1rem_center] 
+          bg-no-repeat 
+          !outline-none
+          border
+          border-mistel
+          rounded-full 
+          px-10
+          lg:px-15
+          py-9 
+          lg:py-11
+          mt-15 
+          w-full" 
         data-filterType="object-state" 
         aria-label="Verfügbarkeit">
-        <option value="NULL">Alle Wohnungen</option>
+        <option value="NULL">ALLE</option>
         <option value="free">frei</option>
         <option value="reserved">reserviert</option>
         <option value="taken">vermietet</option>
@@ -16,13 +39,36 @@
   {{ /partial:layout/span }}
   
   {{ partial:layout/span class="lg:!col-span-3" }}
-    <div class="uppercase font-uni-neue-bold font-black text-sage text-md tracking-wider">Zimmer</div>
+    <div class="font-uni-neue-bold font-black tracking-wider lowercase">
+      Zimmer
+    </div>
     <div>
-      <select 
-        class="js-filter-attribute appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_1rem_center] bg-no-repeat !outline-none bg-sage font-lato-regular rounded-sm text-white text-base 2xl:text-md py-10 px-16 mt-10 w-full h-45" 
-        data-filterType="object-rooms" 
+      <select
+        class="
+          js-filter-attribute
+          appearance-none
+          text-xs
+          lg:text-sm
+          tracking-widest
+          leading-none
+          uppercase
+          bg-[url(../icons/chevron-down.svg)]
+          bg-[length:15px_auto]
+          bg-[right_1rem_center]
+          bg-no-repeat
+          !outline-none
+          border
+          border-mistel
+          rounded-full
+          px-10
+          lg:px-15
+          py-8
+          lg:py-10
+          mt-15
+          w-full"
+        data-filterType="object-rooms"
         aria-label="Zimmer">
-        <option value="NULL">Alle Zimmer</option>
+        <option value="NULL">ALLE</option>
         <option value="1.0">1</option>
         <option value="1.5">1.5</option>
         <option value="2.5">2.5</option>
@@ -33,27 +79,36 @@
   {{ /partial:layout/span }}
 
   {{ partial:layout/span class="lg:!col-span-3" }}
-    <div class="uppercase font-uni-neue-bold font-black text-sage text-md tracking-wider">Hausteil</div>
-    <div>
-      <select 
-        class="js-filter-attribute appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_1rem_center] bg-no-repeat !outline-none bg-sage font-lato-regular rounded-sm text-white text-base 2xl:text-md py-10 px-16 mt-10 w-full h-45" 
-        data-filterType="object-building" 
-        aria-label="Etage">
-        <option value="NULL">Alle Hausteile</option>
-        <option value="Radial Rupperswil 1">Radial Rupperswil 1</option>
-        <option value="Radial Rupperswil 3">Radial Rupperswil 3</option>
-      </select>
+    <div class="font-uni-neue-bold font-black tracking-wider lowercase">
+      Etage
     </div>
-  {{ /partial:layout/span }}
-
-  {{ partial:layout/span class="lg:!col-span-3" }}
-    <div class="uppercase font-uni-neue-bold font-black text-sage text-md tracking-wider">Etage</div>
     <div>
-      <select 
-        class="js-filter-attribute appearance-none bg-[url(../icons/chevron-down.svg)] bg-[length:15px_auto] bg-[right_1rem_center] bg-no-repeat !outline-none bg-sage font-lato-regular rounded-sm text-white text-base 2xl:text-md py-10 px-16 mt-10 w-full h-45" 
-        data-filterType="object-floor" 
+      <select
+        class="
+          js-filter-attribute
+          appearance-none
+          text-xs
+          lg:text-sm
+          tracking-widest
+          leading-none
+          uppercase
+          bg-[url(../icons/chevron-down.svg)]
+          bg-[length:15px_auto]
+          bg-[right_1rem_center]
+          bg-no-repeat
+          !outline-none
+          border
+          border-mistel
+          rounded-full
+          px-10
+          lg:px-15
+          py-8
+          lg:py-10
+          mt-15
+          w-full"
+        data-filterType="object-floor"
         aria-label="Etage">
-        <option value="NULL">Alle Etagen</option>
+        <option value="NULL">ALLE</option>
         <option value="1">1. OG</option>
         <option value="2">2. OG</option>
         <option value="3">3. OG</option>
@@ -64,8 +119,8 @@
   {{ /partial:layout/span }}
   
   {{ partial:layout/span class="lg:!col-span-3 flex items-end" }}
-    <button class="js-btn-reset bg-pearl text-pewter px-15 py-12 w-full h-45 mt-8 lg:mt-0 rounded-sm flex items-center justify-start hover:bg-sage hover:text-white transition-all">
-      Filter zurücksetzen
+    <button class="js-btn-reset btn-pill mt-10">
+      Zurücksetzen
     </button>
   {{ /partial:layout/span }}
 

@@ -303,6 +303,5 @@ section li {
 }
 
 .btn-pill {
-  @apply bg-mistel hover:bg-mistel/60 transition-colors rounded-full leading-none font-uni-neue-bold px-20 lg:px-35 py-6 lg:py-10 inline-block w-auto text-white text-xs lg:text-sm tracking-widest uppercase 
+  @apply bg-mistel hover:bg-mistel/60 transition-colors rounded-full leading-none font-uni-neue-bold px-20 lg:px-35 py-10 lg:py-12 inline-block w-auto text-white text-xs lg:text-sm tracking-widest uppercase cursor-pointer
 }
-  

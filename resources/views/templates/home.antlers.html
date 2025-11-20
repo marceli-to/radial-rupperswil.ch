@@ -1,8 +1,13 @@
+<div class="relative max-w-6xl mx-auto">
+  {{ partial:icons/badge class="absolute z-10 top-0 -translate-y-1/2 right-10 md:right-60 lg:right-150 w-80 h-80
+  md:w-120
+  md:h-120
+  lg:w-160 lg:h-160" }}
+</div>
+
 {{ partial:layout/section class="bg-noctar pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
 
   {{ partial:layout/inner class="relative" }}
-
-    {{ partial:icons/badge class="absolute -top-50 right-10 w-80 h-80" }}
 
     <div class="max-w-3xl">
 
@@ -11,11 +16,19 @@
       {{ partial:components/headings/h2 title="1.5- bis 4.5-Zimmwerwohnungen" class="text-white uppercase" }}
 
       <p class="text-white mt-10 md:mt-20 lg:mt-30">
-        <strong>Ankommen und wohlfühlen in 23 modernen Mietwohnungen von 1.5- bis 4.5-Zimmerwohnungen. «radial» steht für zeitgemässes Wohnen in einem architektonisch klar gestalteten Neubau an zentraler Lage in Rupperswil. Die durchdachten Grundrisse, grosszügigen Fensterfronten und hochwertigen Materialien schaffen eine helle, freundliche Wohnatmosphäre.</strong>
+        <strong>Ankommen und wohlfühlen in 23 modernen Mietwohnungen von 1.5- bis 4.5-Zimmerwohnungen. «radial» steht für
+          zeitgemässes Wohnen in einem architektonisch klar gestalteten Neubau an zentraler Lage in Rupperswil. Die
+          durchdachten Grundrisse, grosszügigen Fensterfronten und hochwertigen Materialien schaffen eine helle,
+          freundliche
+          Wohnatmosphäre.</strong>
       </p>
 
       <p class="text-mistel">
-        Alle Wohnungen verfügen über ein praktisches Reduit mit eigenem Waschturm sowie über ein separates Kellerabteil. Im zentralgelegenen Aargau, nur wenige Gehminuten vom Bahnhof Rupperswil und der Aare entfernt, bietet kurze Wege, hohe Lebensqualität und ideale Voraussetzungen. Ideal für Berufspendler:innen, Einzelpersonen, Paare und Senior:innen
+        Alle Wohnungen verfügen über ein praktisches Reduit mit eigenem Waschturm sowie über ein separates Kellerabteil.
+        Im
+        zentralgelegenen Aargau, nur wenige Gehminuten vom Bahnhof Rupperswil und der Aare entfernt, bietet kurze Wege,
+        hohe
+        Lebensqualität und ideale Voraussetzungen. Ideal für Berufspendler:innen, Einzelpersonen, Paare und Senior:innen
       </p>
 
       <p class="text-mistel">
@@ -23,15 +36,21 @@
       </p>
 
       <div class="mt-10 lg:mt-20">
-        <a 
-          href="/angeobt"
-          arial-label="Zum Angebot"
-          class="btn-pill">
+        <a href="/angebot" arial-label="Zum Angebot" class="btn-pill">
           Angebot
         </a>
       </div>
-
     </div>
+
+  {{ /partial:layout/inner }}
+
+{{ /partial:layout/section }}
+
+{{ partial:layout/section }}  
+
+  {{ partial:layout/inner class="relative" }}
+
+    {{ partial:components/arched_image }}
 
   {{ /partial:layout/inner }}
 

@@ -1,7 +1,17 @@
-{{ partial:layout/section }}
-  {{ partial:layout/inner class="pt-25 md:pt-45" }}
-  {{ partial:components/headings/h1 title="Angebot" class="!mt-0" }}
+{{ partial:layout/section class="pt-15 pb-25 md:pt-25 md:pb-35 xl:pt-40 xl:pb-60" }}
+
+  {{ partial:layout/inner }}
+
+    {{ partial:components/headings/h1 title="Angebot" class="text-mistel" }}
+
+    {{ partial:components/headings/h2 title="23 moderne Mietwohnungen zum Wohlfühlen" class="uppercase max-w-md" }}
+    
     {{ partial:objects/filter }}
+
     {{ partial:objects/objects }}
+
+
+
   {{ /partial:layout/inner }}
+
 {{ /partial:layout/section }}
