@@ -73,14 +73,15 @@ class IsoVisualization {
 
   #highlightRow(iso) {
     const { iso: isoNumber } = iso.dataset;
+    console.log(iso);
     const object = document.querySelector(`[data-object-number="${isoNumber}"]`);
+    // if (!object) return;
 
-    if (!object) return;
+    // const { objectState } = object.dataset;
+    // const stateClass = objectState === 'free' ? CLASSES.available : CLASSES.taken;
 
-    const { objectState } = object.dataset;
-    const stateClass = objectState === 'free' ? CLASSES.available : CLASSES.taken;
-
-    object.classList.add(CLASSES.active);
+    const stateClass = CLASSES.available;
+    // object.classList.add(CLASSES.active);
 
     const isos = document.querySelectorAll(`[data-iso="${isoNumber}"]`);
     for (const isoElement of isos) {
