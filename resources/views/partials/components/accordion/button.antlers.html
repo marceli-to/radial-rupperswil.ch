@@ -1,9 +1,12 @@
 <button
   @click="active = active === id ? null : id"
   class="flex items-start justify-between w-full py-5 lg:py-10 text-left cursor-pointer {{ class }}"
-  :aria-expanded="active === id"
->
-  <span class="font-uni-neue-bold text-sm lg:text-md uppercase tracking-wider">{{ title }}</span>
+  :aria-expanded="active === id">
+
+  <span class="font-uni-neue-bold text-sm lg:text-md tracking-wider">
+    {{ title }}
+  </span>
+
   <svg
     class="w-16 h-16 lg:w-24 lg:h-24 shrink-0 transition-transform duration-300 text-mistel"
     :class="{ 'rotate-180 text-white': active === id }"
@@ -12,4 +15,5 @@
     viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
   </svg>
+  
 </button>
