@@ -6,7 +6,7 @@
 const CONFIG = Object.freeze({
   accessToken: 'pk.eyJ1IjoibWFyY2VsaXRvb29vIiwiYSI6ImNtNm1hNG5vdDBmaGUya3NoZnRldnhqd3YifQ.CMI4nKvoE7I8H9Dal7IHyw',
   style: 'mapbox://styles/marcelitoooo/ck16ms7m51nlo1cmwnqrbjuyq?optimize=true',
-  center: [8.132958329641724, 47.4029093076428],
+  center: [8.129962540303277, 47.40365550299775],
   defaultZoom: 15,
   scriptUrl: 'https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js',
   cssUrl: 'https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css',

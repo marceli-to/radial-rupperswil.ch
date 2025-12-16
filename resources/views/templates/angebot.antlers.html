@@ -2,9 +2,19 @@
 
   {{ partial:layout/inner }}
 
-    {{ partial:components/headings/h1 title="Angebot" class="text-mistel" }}
+    <div class="max-w-3xl">
+      {{ partial:components/headings/h1 title="Angebot" class="text-mistel" }}
 
-    {{ partial:components/headings/h2 title="23 moderne Mietwohnungen zum Wohlfühlen" class="uppercase max-w-md" }}
+      {{ partial:components/headings/h2 title="23 moderne Mietwohnungen zum Wohlfühlen" class="uppercase max-w-md" }}
+      <p class="mt-10 md:mt-20 lg:mt-30">
+        Die Bewerbung für Ihre Wunschwohnung in der Überbauung RADIAL in Rupperswil erfolgt digital über die Plattform Flatfox. Die Vermietung erfolgt ab September 2026, basierend auf den Grundrissen und Projektunterlage
+      </p>
+      <div class="mt-10 lg:mt-20">
+        <a href="/assets/downloads/radial-rupperswil-bewerbungsprozess.pdf" target="_blank" arial-label="Anleitung «Digitaler Bewerbungsprozess» herunterladen" class="btn-pill">
+          Digitaler Bewerbungsprozess
+        </a>
+      </div>
+    </div>
     
     {{ partial:objects/filter }}
 
