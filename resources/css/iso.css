@@ -347,6 +347,8 @@
   fill: #365b74;
 }
 
+.is-active.is-reserved [class^="iso-cls-"],
+.is-active.is-reserved[class^="iso-cls-"],
 .is-active.is-taken [class^="iso-cls-"],
 .is-active.is-taken[class^="iso-cls-"] {
   fill: #C04145;
@@ -357,7 +359,7 @@
 }
 
 [data-object].is-active {
-  @apply !bg-red-400/20;
+  @apply !bg-[#365b74]/20;
 }
 
 /* Floor classes */

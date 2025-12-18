@@ -19,6 +19,7 @@ const CLASSES = Object.freeze({
 
 class IsoVisualization {
   #abortController = null;
+  #clearTimeout = null;
 
   constructor() {
     this.#init();
@@ -49,8 +50,8 @@ class IsoVisualization {
     for (const iso of document.querySelectorAll(SELECTORS.iso)) {
       iso.addEventListener('mouseenter', () => this.#highlightRow(iso), { signal });
       iso.addEventListener('touchstart', () => this.#highlightRow(iso), { signal, passive: true });
-      iso.addEventListener('touchend', () => this.#clearAll(), { signal, passive: true });
-      iso.addEventListener('mouseleave', () => this.#clearAll(), { signal });
+      iso.addEventListener('touchend', () => this.#clearAllDelayed(), { signal, passive: true });
+      iso.addEventListener('mouseleave', () => this.#clearAllDelayed(), { signal });
     }
   }
 
@@ -63,42 +64,57 @@ class IsoVisualization {
       iso.classList.add(CLASSES.active, stateClass);
 
       if (moveSiblings) {
-        const parent = iso.parentElement;
-        for (const sibling of this.#getNextSiblings(parent)) {
-          sibling.classList.add(CLASSES.up);
+        const floorGroup = iso.closest(SELECTORS.floor);
+        if (floorGroup) {
+          for (const sibling of this.#getNextSiblings(floorGroup)) {
+            sibling.classList.add(CLASSES.up);
+          }
         }
       }
     }
   }
 
   #highlightRow(iso) {
+    // Cancel any pending clear
+    if (this.#clearTimeout) {
+      clearTimeout(this.#clearTimeout);
+      this.#clearTimeout = null;
+    }
+
+    // Clear previous highlights first
+    this.#clearIso();
+    this.#clearRow();
+
     const { iso: isoNumber } = iso.dataset;
-    console.log(iso);
     const object = document.querySelector(`[data-object-number="${isoNumber}"]`);
-    // if (!object) return;
 
-    // const { objectState } = object.dataset;
-    // const stateClass = objectState === 'free' ? CLASSES.available : CLASSES.taken;
+    const stateClass = object?.dataset.objectState === 'free' ? CLASSES.available : CLASSES.taken;
 
-    const stateClass = CLASSES.available;
-    // object.classList.add(CLASSES.active);
+    if (object) {
+      object.classList.add(CLASSES.active);
+    }
 
     const isos = document.querySelectorAll(`[data-iso="${isoNumber}"]`);
     for (const isoElement of isos) {
       isoElement.classList.add(CLASSES.active, stateClass);
+
+      // Lift floors above this apartment
+      const floorGroup = isoElement.closest(SELECTORS.floor);
+      if (floorGroup) {
+        for (const sibling of this.#getNextSiblings(floorGroup)) {
+          sibling.classList.add(CLASSES.up);
+        }
+      }
     }
   }
 
   #clearIso() {
     for (const iso of document.querySelectorAll(SELECTORS.iso)) {
       iso.classList.remove(CLASSES.active, CLASSES.available, CLASSES.taken);
+    }
 
-      const parent = iso.parentElement;
-      parent.classList.remove(CLASSES.up);
-
-      for (const sibling of this.#getAllSiblings(parent)) {
-        sibling.classList.remove(CLASSES.up);
-      }
+    for (const floor of document.querySelectorAll(SELECTORS.floor)) {
+      floor.classList.remove(CLASSES.up);
     }
   }
 
@@ -111,6 +127,16 @@ class IsoVisualization {
   #clearAll() {
     this.#clearRow();
     this.#clearIso();
+  }
+
+  #clearAllDelayed() {
+    if (this.#clearTimeout) {
+      clearTimeout(this.#clearTimeout);
+    }
+    this.#clearTimeout = setTimeout(() => {
+      this.#clearAll();
+      this.#clearTimeout = null;
+    }, 50);
   }
 
   #hideFloor(floor) {

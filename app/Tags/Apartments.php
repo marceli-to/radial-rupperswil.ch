@@ -1,37 +1,66 @@
 <?php
 namespace App\Tags;
-use App\Actions\GetData;
 use Statamic\Tags\Tags;
+use Statamic\Facades\Entry;
 
 class Apartments extends Tags
 {
+  protected $floorOrder = [
+    'EG' => 0,
+    '1. OG' => 1,
+    '2. OG' => 2,
+    '3. OG' => 3,
+    '4. OG' => 4,
+    'Attika' => 5,
+  ];
+
   public function index()
   {
   }
 
   public function get()
   {
-    // get data from api or storage
-    $data = (new GetData)->execute();
+    // Get apartments from collection (respects manual order)
+    $entries = Entry::query()
+      ->where('collection', 'apartments')
+      ->orderBy('order')
+      ->get();
 
-    // filter out items with "object_category":"APARTMENT"
-    $data = collect($data)->filter(function ($item, $key) {
-      return $item['object_category'] == 'APARTMENT';
+    // Transform to expected format
+    $data = $entries->map(function ($entry) {
+      $number = $entry->get('number');
+      $floor = $entry->get('floor');
+      $state = $entry->get('state') ?? 'available';
+
+      // Map state to status/reserved for frontend compatibility
+      $statusMap = [
+        'available' => ['status' => 'act', 'reserved' => false],
+        'reserved' => ['status' => 'act', 'reserved' => true],
+        'taken' => ['status' => 'arc', 'reserved' => false],
+      ];
+      $stateData = $statusMap[$state] ?? $statusMap['available'];
+
+      return [
+        'ref_house' => '01',
+        'ref_object' => $number,
+        'floor' => $this->floorOrder[$floor] ?? 0,
+        'floor_label' => $floor,
+        'number_of_rooms' => $entry->get('rooms'),
+        'surface_living' => $entry->get('area'),
+        'price_display' => $entry->get('price'),
+        'status' => $stateData['status'],
+        'reserved' => $stateData['reserved'],
+        'short_url' => '',
+        'object_category' => 'APARTMENT',
+      ];
     });
 
-    // init array of apartments with buildings
-    $apartments = ['building_1'];
-
-    // group apartments by building
-    $apartments = collect($data)->sortBy('floor')->groupBy(function ($item, $key) {
-      $ref_house = substr($item['ref_house'], 0, 2);
-      if (in_array($ref_house, ['01']))
-      {
-        return 'building_1';
-      } 
+    // Group apartments by building
+    $apartments = $data->groupBy(function ($item, $key) {
+      return 'building_1';
     });
 
-    // addresses
+    // Addresses
     $addresses = [
       'building_1' => 'Radial Rupperswil 1/3',
     ];

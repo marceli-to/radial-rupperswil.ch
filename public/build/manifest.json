@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-L9rUAB8x.css",
+    "file": "assets/app-BXOdkLa6.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -37,7 +37,7 @@
     "src": "resources/icons/chevron-down.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-o_qJn8H5.js",
+    "file": "assets/app-CHVpacvM.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

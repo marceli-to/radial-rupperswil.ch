@@ -1,2 +1,5 @@
 import Rellax from 'rellax';
-let rellax = new Rellax('.rellax');
+
+if (document.querySelector('.rellax')) {
+  new Rellax('.rellax');
+}

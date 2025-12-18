@@ -1,0 +1,12 @@
+title: Apartments
+template: default
+layout: templates/layout
+revisions: false
+sort_dir: asc
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

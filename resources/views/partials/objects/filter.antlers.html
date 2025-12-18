@@ -1,4 +1,4 @@
-{{ partial:layout/grid class="sm:!gap-x-40 sm:!gap-y-20 lg:!gap-y-40 mb-40 md:mb-60 lg:mb-80 mt-10 md:mt-20 xl:mt-30" }}
+{{ partial:layout/grid class="sm:!gap-x-40 sm:!gap-y-20 lg:!gap-y-40 mb-40 md:mb-60 lg:mb-80 mt-40 md:mt-50 xl:mt-60" }}
 
   {{ partial:layout/span class="lg:!col-span-3" }}
     <div class="font-uni-neue-bold font-black tracking-wider lowercase">
@@ -69,7 +69,6 @@
         data-filterType="object-rooms"
         aria-label="Zimmer">
         <option value="NULL">ALLE</option>
-        <option value="1.0">1</option>
         <option value="1.5">1.5</option>
         <option value="2.5">2.5</option>
         <option value="3.5">3.5</option>
@@ -109,11 +108,10 @@
         data-filterType="object-floor"
         aria-label="Etage">
         <option value="NULL">ALLE</option>
+        <option value="0">EG</option>
         <option value="1">1. OG</option>
         <option value="2">2. OG</option>
         <option value="3">3. OG</option>
-        <option value="4">4. OG</option>
-        <option value="5">Attika</option>
       </select>
     </div>
   {{ /partial:layout/span }}

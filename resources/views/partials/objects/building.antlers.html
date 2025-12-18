@@ -6,16 +6,16 @@
     
     {{ apartments }}
     
-      {{ partial:components/table/trow 
-          filterable="true" 
-          number="{{ ref_house }}-{{ ref_object }}" 
-          state="{{ state:get :state="status" :reserved="reserved" key="true" }}" 
-          rooms="{{ number_of_rooms }}" 
-          floor="{{ floor }}" 
+      {{ partial:components/table/trow
+          filterable="true"
+          number="{{ ref_object }}"
+          state="{{ state:get :state="status" :reserved="reserved" key="true" }}"
+          rooms="{{ number_of_rooms }}"
+          floor="{{ floor }}"
           building="{{ ref_house }}" }}
 
         {{ partial:components/table/tcell class="!pr-0" }}
-          {{ ref_house }}-{{ ref_object }}
+          {{ ref_object }}
         {{ /partial:components/table/tcell }}
 
         {{ partial:components/table/tcell class="!pr-4 md:!pr-10" }}
@@ -37,18 +37,20 @@
         {{ /partial:components/table/tcell }}
 
         {{ partial:components/table/tcell class="text-center" }}
-          <a href="/assets/downloads/Radial Rupperswil-basel-wohnung-{{ ref_house }}-{{ ref_object }}.pdf" target="_blank" title="Download Grundriss Objekt {{ ref_house }}-{{ ref_object }}">
-          </a>
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            <a href="/assets/downloads/radial-rupperswil-grundriss-{{ ref_object }}.pdf" target="_blank" title="Download Grundriss Wohnung {{ ref_object }}">
+              {{ partial:icons/download class="w-18 h-18 inline-block hover:text-mistel transition-colors" }}
+            </a>
+          {{ /if }}
         {{ /partial:components/table/tcell }}
 
-        {{ partial:components/table/tcell class="text-xs text-right align-middle !pr-0" }}
+        {{ partial:components/table/tcell class="text-xxs sm:text-xs text-right align-middle !pr-0" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
-            <a 
-              href="https://flatfox.ch/de/listing{{ short_url }}submit/" 
-              target="_blank"
-              title="Jetzt auf Flatfox anmelden"
-              class="rounded-full bg-mistel hover:bg-mistel/80 transition-all duration-150  text-white px-10 py-3 text-xs leading-none">
-              Flatfox
+            <a
+              href="mailto:vermietung@circum.swiss?subject=Anmeldung%20Radial%20Rupperswil%20{{ ref_object }}"
+              title="Jetzt anmelden"
+              class="rounded-full bg-mistel hover:bg-mistel/80 transition-all duration-150 text-white px-10 py-3 text-xxs sm:text-xs leading-none">
+              Anmelden
             </a>
           {{ else }}
             {{ state:get :state="status" :reserved="reserved" }}

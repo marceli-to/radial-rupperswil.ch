@@ -1,0 +1,110 @@
+title: Wohnung
+tabs:
+  main:
+    display: Allgemein
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Titel
+              required: true
+              validate:
+                - required
+          -
+            handle: number
+            field:
+              type: text
+              display: Nummer
+              instructions: 'Wohnungsnummer (z.B. 0001)'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: floor
+            field:
+              type: select
+              display: Stockwerk
+              instructions: 'Stockwerk der Wohnung'
+              instructions_position: below
+              options:
+                -
+                  key: EG
+                  value: EG
+                -
+                  key: 1. OG
+                  value: 1. OG
+                -
+                  key: 2. OG
+                  value: 2. OG
+                -
+                  key: 3. OG
+                  value: 3. OG
+                -
+                  key: 4. OG
+                  value: 4. OG
+                -
+                  key: Attika
+                  value: Attika
+              validate:
+                - required
+          -
+            handle: rooms
+            field:
+              type: text
+              display: Zimmer
+              instructions: 'Anzahl Zimmer (z.B. 3.5)'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: area
+            field:
+              type: integer
+              display: Fläche
+              instructions: 'Wohnfläche in m²'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: price
+            field:
+              type: float
+              display: Preis
+              instructions: 'Monatliche Miete in CHF'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: state
+            field:
+              type: button_group
+              display: Status
+              instructions: 'Verfügbarkeit'
+              instructions_position: below
+              default: available
+              options:
+                -
+                  key: available
+                  value: verfügbar
+                -
+                  key: reserved
+                  value: reserviert
+                -
+                  key: taken
+                  value: vermietet
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
