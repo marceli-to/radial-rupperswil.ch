@@ -24,3 +24,6 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 INSTALL.txt
+
+/content
+/public/assets
