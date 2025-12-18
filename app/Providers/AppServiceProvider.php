@@ -25,15 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Clear cache when apartments collection is modified
-        $clearCacheForApartments = function ($event) {
-            if ($event->entry->collectionHandle() === 'apartments') {
-                StaticCache::flush();
-                Cache::flush();
-            }
-        };
+        // // Clear cache when apartments collection is modified
+        // $clearCacheForApartments = function ($event) {
+        //     if ($event->entry->collectionHandle() === 'apartments') {
+        //         StaticCache::flush();
+        //         Cache::flush();
+        //     }
+        // };
 
-        Event::listen(EntrySaved::class, $clearCacheForApartments);
-        Event::listen(EntryDeleted::class, $clearCacheForApartments);
+        // Event::listen(EntrySaved::class, $clearCacheForApartments);
+        // Event::listen(EntryDeleted::class, $clearCacheForApartments);
     }
 }
