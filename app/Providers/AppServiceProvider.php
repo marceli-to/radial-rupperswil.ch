@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Event;
 use Statamic\Statamic;
 use Statamic\Events\EntrySaved;
 use Statamic\Events\EntryDeleted;
@@ -32,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             }
         };
 
-        EntrySaved::listen($clearCacheForApartments);
-        EntryDeleted::listen($clearCacheForApartments);
+        Event::listen(EntrySaved::class, $clearCacheForApartments);
+        Event::listen(EntryDeleted::class, $clearCacheForApartments);
     }
 }
