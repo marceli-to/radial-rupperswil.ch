@@ -84,7 +84,11 @@ return [
         'class' => null,
 
         'rules' => [
-            //
+            'collections' => [
+                'apartments' => [
+                    'urls' => ['/angebot', '/angebot/*'],
+                ],
+            ],
         ],
 
     ],

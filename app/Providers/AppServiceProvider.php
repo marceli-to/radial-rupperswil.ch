@@ -3,7 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Cache;
 use Statamic\Statamic;
+use Statamic\Events\EntrySaved;
+use Statamic\Events\EntryDeleted;
+use Statamic\Facades\StaticCache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,9 +24,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Statamic::vite('app', [
-        //     'resources/js/cp.js',
-        //     'resources/css/cp.css',
-        // ]);
+        // Clear cache when apartments collection is modified
+        $clearCacheForApartments = function ($event) {
+            if ($event->entry->collectionHandle() === 'apartments') {
+                StaticCache::flush();
+                Cache::flush();
+            }
+        };
+
+        EntrySaved::listen($clearCacheForApartments);
+        EntryDeleted::listen($clearCacheForApartments);
     }
 }
