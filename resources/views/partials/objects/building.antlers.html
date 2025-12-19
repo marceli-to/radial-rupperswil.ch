@@ -32,7 +32,19 @@
 
         {{ partial:components/table/tcell class="text-right" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
-            {{ price_display | format_number(2, '.', '\'') }}
+            {{ rent_net | format_number(0, '.', '\'') }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            {{ additional_costs | format_number(0, '.', '\'') }}
+          {{ /if }}
+        {{ /partial:components/table/tcell }}
+
+        {{ partial:components/table/tcell class="text-right" }}
+          {{ if {state:available :state="status" :reserved="reserved"} }}
+            {{ rent_gross | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
 

@@ -27,8 +27,34 @@
 
     {{ /nocache }}
 
-    <div class="text-xxs sm:text-xs">
-      Alle Kosten in CHF
+    <table class="w-full mt-20 mb-10 lg:mb-30 text-xxs sm:text-xs">
+      <thead class="border-b border-b-mistel">
+        <tr class="[&>th]:py-12 [&>th]:align-middle [&>th]:leading-none [&>th]:font-uni-neue-bold">
+          <th class="text-left w-[50%]">Einstellplätze</th>
+          <th class="text-left w-[25%]">Etage</th>
+          <th class="text-right w-[25%]">Miete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-b-mistel/30">
+          <td class="py-8">Einstellplatz</td>
+          <td class="py-8">1. UG</td>
+          <td class="py-8 text-right">140/Mt.</td>
+        </tr>
+        <tr class="border-b border-b-mistel/30">
+          <td class="py-8">E-Einstellplatz</td>
+          <td class="py-8">1. UG</td>
+          <td class="py-8 text-right">140/Mt.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-xxs sm:text-xs flex flex-col gap-y-4">
+      <div>Alle Preise in CHF</div>
+      <div>m<sup>2</sup> = Hauptnutzfläche</div>
+      <div>Brutto = Bruttomietzins pro Monat</div>
+      <div>NK = Nebenkosten pro Monat</div>
+      <div>Netto = Nettomietzins pro Monat</div>
     </div>
 
     <!-- <div class="mt-15 lg:mt-30 flex flex-col gap-y-10 lg:gap-y-20">

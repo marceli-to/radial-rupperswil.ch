@@ -69,11 +69,29 @@ tabs:
               validate:
                 - required
           -
-            handle: price
+            handle: rent_net
             field:
-              type: float
-              display: Preis
-              instructions: 'Monatliche Miete in CHF'
+              type: integer
+              display: Nettomiete
+              instructions: 'Nettomiete pro Monat in CHF'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: additional_costs
+            field:
+              type: integer
+              display: Nebenkosten
+              instructions: 'Nebenkosten pro Monat in CHF'
+              instructions_position: below
+              validate:
+                - required
+          -
+            handle: rent_gross
+            field:
+              type: integer
+              display: Bruttomiete
+              instructions: 'Bruttomiete pro Monat in CHF'
               instructions_position: below
               validate:
                 - required
