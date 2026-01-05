@@ -38,13 +38,13 @@
 
         {{ partial:components/table/tcell class="text-right" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
-            {{ additional_costs | format_number(0, '.', '\'') }}
+            {{ rent_charges | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
 
         {{ partial:components/table/tcell class="text-right" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
-            {{ rent_gross | format_number(0, '.', '\'') }}
+            {{ price_display | format_number(0, '.', '\'') }}
           {{ /if }}
         {{ /partial:components/table/tcell }}
 
@@ -59,8 +59,9 @@
         {{ partial:components/table/tcell class="text-xxs sm:text-xs text-right align-middle !pr-0" }}
           {{ if {state:available :state="status" :reserved="reserved"} }}
             <a
-              href="mailto:vermietung@circum.swiss?subject=Anmeldung%20Radial%20Rupperswil%20{{ ref_object }}"
-              title="Jetzt anmelden"
+              href="https://flatfox.ch/de/listing{{ short_url }}submit/"
+              target="_blank"
+              title="Jetzt auf Flatfox anmelden"
               class="rounded-full bg-mistel hover:bg-mistel/80 transition-all duration-150 text-white px-10 py-3 text-xxs sm:text-xs leading-none">
               Anmelden
             </a>
