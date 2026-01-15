@@ -10,6 +10,13 @@ class GetData
   protected $listing_status_active = ["pre", "act", "dis"];
   protected $listing_status_removed = ["arc", "rem"];
 
+  // Excluded references (Sammelinserate - collective listings, not individual apartments)
+  protected $excluded_references = [
+    '10100.99.9001',
+    '10100.99.9002',
+    '10100.99.9003',
+  ];
+
   // Your final listing status
   protected $status_free = "free";
   protected $status_reserved = "reserved";
@@ -38,6 +45,11 @@ class GetData
     // find duplicates and keep the one with the higher pk
     $data = $data->sortByDesc('pk')->unique('reference');
     $data = $data->sortBy('reference');
+
+    // filter out excluded references (Sammelinserate)
+    $data = $data->filter(function ($apartment) {
+      return !in_array($apartment['reference'], $this->excluded_references);
+    });
 
     return $data; 
   }
